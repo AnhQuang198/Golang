@@ -15,7 +15,7 @@ func main() {
 	w, h := recInfo1(6, 7)
 	fmt.Println("W: ", w)
 	fmt.Println("H: ", h)
-	Call()
+	//Call()
 }
 
 //func khong truyen vao param va khong co gia tri tra ve
