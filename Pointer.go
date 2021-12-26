@@ -41,9 +41,31 @@ func main() {
 	fmt.Println("========")
 	fmt.Println(num)
 	getpointerValue(&num)
+
+	fmt.Println("------Pointer-----")
+	numA := 20
+	numB := 10
+	exchange(&numA, &numB) //khi truyền giá trị vào func, nếu lấy value thì sẽ copy ra 1 vùng nhớ khác nên phải sử dụng pointer để thay đổi giá trị sau khi truyền
+
+	fmt.Println(numA, numB)
+
+	fmt.Println("-------------")
+	n := answer()
+	fmt.Println(*n / 2)
+}
+
+func answer() *int {
+	a := 42
+	return &a
 }
 
 func getpointerValue(pointer *int) {
 	*pointer = 1000
 	fmt.Println("Poinnnnter", *pointer)
+}
+
+func exchange(a, b *int) {
+	tmp := *a
+	*a = *b
+	*b = tmp
 }
