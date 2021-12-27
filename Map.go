@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 func main() {
 	//declare map
@@ -47,4 +50,14 @@ func main() {
 	fmt.Println(value)
 
 	//trong map khong co tuan tu == de so sanh map
+
+	var rabbit = make(map[string]interface{})
+	rabbit["id"] = 1
+	rabbit["name"] = "Teo"
+	rabbit["age"] = 2
+
+	data, _ := json.Marshal(rabbit)
+	var myJsonString = string(data)
+	fmt.Println(myJsonString)
+	fmt.Println(data)
 }
